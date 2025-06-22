@@ -525,7 +525,7 @@ async def arjun(bot: Client, m: Message):
             elif 'media-cdn.classplusapp.com' in url or 'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url: 
                 headers = { 'x-access-token': f'{token_cp}',"X-CDN-Tag": "empty"}
                 response = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers=headers)
-                url   = response.json()['url']
+                url   = 'https://ugxclassplusapi.vercel.app/get/cp/dl?url='+url
 
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
